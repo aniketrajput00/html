@@ -1,0 +1,184 @@
+create or replace function sum_mat(cname1 varchar)
+return int
+As
+ans int;
+Begin 
+select sum(maturity_amount) into ans from policy_info,client,c_p
+where policy_info.policy_no=c_p.policy_no
+and client.client_no=c_p.client_no
+and client_name=cname1;
+return ans;
+End;
+
+
+select sum_mat('om')from dual;
+
+
+
+
+
+
+
+
+
+
+create or replace function total_supp(item1 varchar)
+return int
+As
+ans int;
+Begin
+select count(*) into ans from supplier,item,i_t
+where supplier.supplier_no=i_s.supplier_no
+and item.itemno=i_s.itemno
+and itemname=item1;
+return int;
+End;
+
+select total_supp('pen') from dual;
+
+
+
+
+
+
+create or replace function total_price(publication_name1 varchar) 
+return int
+As
+ans int
+Begin
+select count(*) into ans from book,library
+where library.lno=book.lno
+and publication=publication_name1;
+return ans;
+End;
+
+select total_price('vision') from dual;
+
+
+
+
+
+
+create or replace function details_plan(plan_no1 int)
+return number
+As
+ans number;
+Begin
+select plan.* from plan,customer
+where plan.plan_no=customer.plan_no
+and plan.plan_no=101;
+return ans;
+End;
+
+select details_plan('101') from dual;
+
+
+
+
+
+
+
+
+
+
+
+
+
+Create or replace function total_proj(dep_name1 varchar)
+return int;
+AS
+ans int;
+Begin
+ select dname,project.* into ans from project,department,p_d
+ where project.pno=p_d.pno
+ and department.dno=p_d.dno
+ and dname=dep_name1;
+ return ans;
+End;
+
+
+
+select total_proj('bbaca') from dual;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+create or replace function show(charges1 int)
+return int
+As
+ans int;
+Begin
+select gym.charges into ans from gym,member
+where gym.gno=member.gno
+and id='101'
+return ans;
+End;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+

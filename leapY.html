@@ -1,0 +1,21 @@
+<html>
+ <body>
+  <form>
+   Enter character:
+   <input type="text" id="t1"><br>
+   <input type="button" value="vowel or consonent" onclick="check()">
+  </form>
+ </body>
+</html>
+
+<script language="Javascript">
+function check()
+{
+ var a=document.getElementById("t1").value;
+ a=parsechar(a);
+ if(ch='a'|| ch='e'||ch='i'||ch='o'||ch='u'||ch='A'||ch='E'||ch='I'||ch='O'||ch='U')
+  alert("Char is vowel");
+ else
+  alert("char is consonent");
+}
+</script>
